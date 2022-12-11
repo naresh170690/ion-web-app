@@ -64,4 +64,12 @@
       </plugins>
     </pluginManagement>
   </build>
+  <distributionManagement>
+    <repository>
+        <id>central</id>
+        <name>a0jwfeeybpcmq-artifactory-primary-0-releases</name>
+        <url>https://samnaro.jfrog.io/artifactory/product-libs-release</url>
+    </repository>
+  </distributionManagement>
+   
 </project>
