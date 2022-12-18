@@ -2,15 +2,15 @@
 pipeline {
     agent any
     stages {
-        stage ('Git Checkout') {
+        stage ('Build') {
             steps {
-                git 'https://github.com/naresh170690/ion-web-app.git'
+                echo "Build"
 
             }
         }
-        stage ('Build') {
+        stage ('Test') {
             steps {
-                sh 'mvn clean install'
+                echo "Test"
             }
         }
 
