@@ -1,9 +1,9 @@
 
 pipeline {
     agent any
-    enviroment {
-        
-    }
+    // enviroment {
+
+    // }
     stages {
         stage ('maven Build') {
             steps {
