@@ -1,7 +1,9 @@
 
 pipeline {
     agent any
-
+    environment {
+        maven = "C:\apache-maven-3.8.6\bin"
+    }
     stages {
         stage ('maven Build') {
             steps {
