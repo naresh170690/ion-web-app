@@ -11,9 +11,11 @@ pipeline {
 
             }
         }
-        stage ('Maven test')
-            echo "maven test"
-        
+        stage ('Maven test'){
+            stpes { 
+                echo "maven test"
+            }
+        }
     }
 
 }
