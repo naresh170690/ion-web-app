@@ -1,21 +1,17 @@
 
 pipeline {
     agent any
+    enviroment
     stages {
-        stage ('Build') {
+        stage ('maven Build') {
             steps {
-                echo "Build"
+                sh "mvn clean package"
 
             }
         }
-        stage ('Test') {
-            steps {
-                echo "Test "
-            }
-        }
-
+        stage ('Maven test')
+            echo "maven test"
         
     }
-
 
 }
