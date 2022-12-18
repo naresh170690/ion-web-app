@@ -38,13 +38,13 @@
           </snapshots>
           <id>central</id>
           <name>product-libs-release</name>
-          <url>https://samnaro.jfrog.io/artifactory/product-libs-release</url>
+          <url>https://samnaro.jfrog.io/artifactory/code-test-libs-release/</url>
         </pluginRepository>
         <pluginRepository>
           <snapshots />
           <id>snapshots</id>
           <name>product-libs-snapshot</name>
-          <url>https://samnaro.jfrog.io/artifactory/product-libs-snapshot</url>
+          <url>https://samnaro.jfrog.io/artifactory/code-test-libs-snapshot/</url>
         </pluginRepository>
       </pluginRepositories>
       <id>artifactory</id>
