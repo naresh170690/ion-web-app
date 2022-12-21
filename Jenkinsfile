@@ -5,15 +5,15 @@ pipeline {
     //     // PATH = "/c/apache-maven-3.8.6/bin:$Path "
     // }
     stages {
-        stage ('maven Build') {
+        stage ('Maven Build') {
             steps {
-                sh "mvn clean package"
+                sh "mvn clean install"
             }
         }
 
         stage ('Maven Test') {
             steps { 
-                echo "maven test"
+                echo "=====================Maven Test========================"
             }
         }
     }
