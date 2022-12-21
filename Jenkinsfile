@@ -1,9 +1,9 @@
 
 pipeline {
     agent any
-    environment {
-        PATH = "/c/apache-maven-3.8.6/bin:$Path "
-    }
+    // environment {
+    //     // PATH = "/c/apache-maven-3.8.6/bin:$Path "
+    // }
     stages {
         stage ('maven Build') {
             steps {
