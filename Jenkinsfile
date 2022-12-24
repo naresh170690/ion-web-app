@@ -11,7 +11,7 @@ pipeline {
                 }
             stage ('Maven Install') {
                 steps {
-                    sh "mvn clean install"
+                    sh "/opt/maven/apache-maven-3.8.6/bin/mvn clean install"
                 }
             }
             stage ('Maven Package') {
