@@ -16,7 +16,7 @@ pipeline {
             }
             stage ('Maven Package') {
             steps {
-                sh "mvn deploy"
+                sh "/opt/maven/apache-maven-3.8.6/bin/mvn deploy"
             }
         }
 
