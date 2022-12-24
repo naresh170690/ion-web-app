@@ -11,12 +11,12 @@ pipeline {
                 }
             stage ('Maven Install') {
                 steps {
-                    sh "mvn install"
+                    sh "mvn clean install"
                 }
             }
             stage ('Maven Package') {
             steps {
-                sh "mvn package"
+                sh "mvn deploy"
             }
         }
 
