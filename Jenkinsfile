@@ -6,7 +6,7 @@ pipeline {
     stages {
             stage ('Build No') {
                     steps {
-                        sh "echo $BUILD_NUMBER"
+                        sh "echo 'build No. - $BUILD_NUMBER'"
                     }
                 }
             stage ('Maven Install') {
