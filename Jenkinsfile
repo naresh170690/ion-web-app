@@ -1,11 +1,20 @@
 
 pipeline {
     agent any
-    // environment {
-    //     // PATH = "/c/apache-maven-3.8.6/bin:$Path "
-    // }
+
+
     stages {
-        stage ('Maven Build') {
+            stage ('Build No') {
+                    steps {
+                        sh "echo $BUILD_NUMBER"
+                    }
+                }
+            stage ('Maven Install') {
+                steps {
+                    sh "mvn clean install"
+                }
+            }
+            stage ('Maven Package') {
             steps {
                 sh "mvn clean package"
             }
