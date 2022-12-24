@@ -66,9 +66,9 @@
   </build>
   <distributionManagement>
     <repository>
-        <id>central</id>
-        <name>a0jwfeeybpcmq-artifactory-primary-0-releases</name>
-        <url>https://samnaro.jfrog.io/artifactory/product-libs-release</url>
+        <id>artifactory</id>
+        <name>sam-ops-libs-release-local</name>
+        <url>https://samnaro.jfrog.io/artifactory/sam-ops-libs-release-local/</url>
     </repository>
   </distributionManagement>
    
