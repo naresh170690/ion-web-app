@@ -14,15 +14,17 @@ pipeline {
                     sh "/opt/maven/apache-maven-3.8.6/bin/mvn clean install"
                 }
             }
-            stage ('Maven Package') {
-            steps {
-                sh "/opt/maven/apache-maven-3.8.6/bin/mvn deploy -s settings.xml"
-            }
-        }
+//             stage ('Maven Package') {
+//             steps {
+//                 sh "/opt/maven/apache-maven-3.8.6/bin/mvn deploy -s settings.xml"
+//             }
+//         }
 
-        stage ('Maven Test') {
+        stage ('Code Quality') {
             steps { 
-                echo "=====================Maven Test========================"
+                withSonarQubeEnv(SonarQube Server){
+                sh "/opt/maven/apache-maven-3.8.6/bin/mvn sonar:sonar"
+                }
             }
         }
     }
