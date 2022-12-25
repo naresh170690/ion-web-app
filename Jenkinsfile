@@ -22,7 +22,7 @@ pipeline {
 
         stage ('Code Quality') {
             steps { 
-                withSonarQubeEnv(SonarQube Server){
+                withSonarQubeEnv('SonarQube Server'){
                 sh "/opt/maven/apache-maven-3.8.6/bin/mvn sonar:sonar"
                 }
             }
