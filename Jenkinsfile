@@ -14,7 +14,7 @@ pipeline {
                     sh "/opt/maven/apache-maven-3.8.6/bin/mvn clean install"
                 }
             }
-            stage ('Maven Package') {
+            stage ('Maven Package : Artifact Upload') {
             steps {
                 sh "/opt/maven/apache-maven-3.8.6/bin/mvn deploy -s settings.xml"
             }
