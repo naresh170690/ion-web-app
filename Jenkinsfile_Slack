@@ -1,0 +1,45 @@
+
+pipeline {
+    agent any
+
+
+    stages {
+            stage ('Build No') {
+                    steps {
+                        sh "echo 'build No. - $BUILD_NUMBER'"
+                    }
+                }
+            stage ('Maven Install') {
+                steps {
+                    sh "/opt/maven/apache-maven-3.8.6/bin/mvn clean install"
+                }
+            }
+            stage ('Maven Package : Artifact Upload') {
+            steps {
+                sh "/opt/maven/apache-maven-3.8.6/bin/mvn deploy -s settings.xml"
+            }
+        }
+
+        stage ('Slack Notification') {
+            steps {
+            script {
+            try{
+                //Start sending build information
+                    slackSend channel: 'devops', color: '"#439FE0", message: "Build Started: ${env.JOB_NAME} ${env.BUILD_NUMBER}"', failOnError: true, message: 'Current Build -  ${env.BUILD_NUMBER}'
+            }
+            catch(Exception e){
+                sh "echo 'Job Failed'"
+                currentBuild.result = "FAILURE"
+                }
+              }
+            }
+        }
+    }
+    post {
+        always{
+            mail body: 'Jenkins Job  - ${BUILD_NAME}', cc: 'naresh.masurkar1@gmail.com', subject: 'Jenkins Job - $BUILD_NUMBER', to: 'naresh170690@rediffmail.com'
+        }
+
+    }
+
+}
