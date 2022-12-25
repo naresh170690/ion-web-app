@@ -22,8 +22,8 @@ pipeline {
 
         stage ('Maven Test') {
             steps { 
-                echo "=====================Maven Test========================"
-                mail bcc: '', body: '', cc: 'naresh.masurkar1@gmail.com', from: '', replyTo: '', subject: 'Jenkins Job - ', to: 'naresh170690@rediffmail.com'
+                echo "=====================Maven Test & EMAIL Notification ======================="
+                mail body: 'Jenkins Job  - $BUILD_NAME', cc: 'naresh.masurkar1@gmail.com', from: 'naresh.masurkar1@gmail.com', subject: 'Jenkins Job - $BUILD_NUMBER', to: 'naresh170690@rediffmail.com'
             }
         }
     }
