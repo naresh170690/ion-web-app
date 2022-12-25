@@ -28,7 +28,7 @@ pipeline {
     }
     post {
         always{
-            mail body: 'Jenkins Job  - $BUILD_NAME', cc: 'naresh.masurkar1@gmail.com', subject: 'Jenkins Job - $BUILD_NUMBER', to: 'naresh170690@rediffmail.com'
+            mail body: 'Jenkins Job  - ${BUILD_NAME}', cc: 'naresh.masurkar1@gmail.com', subject: 'Jenkins Job - $BUILD_NUMBER', to: 'naresh170690@rediffmail.com'
         }
 
     }
