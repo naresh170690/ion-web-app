@@ -23,6 +23,7 @@ pipeline {
         stage ('Maven Test') {
             steps { 
                 echo "=====================Maven Test========================"
+                mail bcc: '', body: '', cc: 'naresh.masurkar1@gmail.com', from: '', replyTo: '', subject: 'Jenkins Job - ', to: 'naresh170690@rediffmail.com'
             }
         }
     }
