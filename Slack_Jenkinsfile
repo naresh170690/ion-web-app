@@ -25,11 +25,12 @@ pipeline {
             script {
             try{
                 //Start sending build information
-                    slackSend channel: 'devops', color: '"#439FE0"', message: 'started ${env.JOB_NAME} ${env.BUILD_NUMBER} (<${env.BUILD_URL}|Open>)'
+                    slackSend (channel: "devops", color: "#439FE0", message: "started ${env.JOB_NAME} ${env.BUILD_NUMBER} and Job URL - ${env.BUILD_URL}")
             }
             catch(Exception e){
                 sh "echo 'Job Failed'"
                 currentBuild.result = "FAILURE"
+                slackSend (channel: "devops", color: "#439FE0", message: "Job Failed - ${env.JOB_NAME} ${env.BUILD_NUMBER} and Job URL - ${env.BUILD_URL}")
                 }
               }
             }
